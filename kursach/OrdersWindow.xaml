@@ -12,5 +12,6 @@
         <Button Content="Информация о сотрудниках" HorizontalAlignment="Left" VerticalAlignment="Top" Width="220" Margin="400,264,0,0" Height="33" Click="Button_Click_2"/>
         <ListBox Name="DBItems" HorizontalAlignment="Left" Height="249" Margin="10,10,0,0" VerticalAlignment="Top" Width="774"/>
         <Button Content="Запросы с параметрами" HorizontalAlignment="Left" VerticalAlignment="Top" Width="159" Margin="625,264,0,0" Height="33" Click="Button_Click_3"/>
+        <Button Content="Home" HorizontalAlignment="Left" Margin="709,391,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_4"/>
     </Grid>
 </Window>

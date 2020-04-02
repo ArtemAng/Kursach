@@ -28,3 +28,11 @@ C:\Users\Mi\source\repos\kursach\kursach\obj\Debug\OrdersWithParams.g.cs
 C:\Users\Mi\source\repos\kursach\kursach\obj\Debug\OrdersWithParams.baml
 C:\Users\Mi\source\repos\kursach\kursach\obj\Debug\UserForm.g.cs
 C:\Users\Mi\source\repos\kursach\kursach\obj\Debug\UserForm.baml
+C:\Users\Mi\source\repos\kursach\kursach\obj\Debug\About.g.cs
+C:\Users\Mi\source\repos\kursach\kursach\obj\Debug\PriceWindow.g.cs
+C:\Users\Mi\source\repos\kursach\kursach\obj\Debug\UslugyWindow.g.cs
+C:\Users\Mi\source\repos\kursach\kursach\obj\Debug\About.baml
+C:\Users\Mi\source\repos\kursach\kursach\obj\Debug\PriceWindow.baml
+C:\Users\Mi\source\repos\kursach\kursach\obj\Debug\UslugyWindow.baml
+C:\Users\Mi\source\repos\kursach\kursach\obj\Debug\ContactsWindow.g.cs
+C:\Users\Mi\source\repos\kursach\kursach\obj\Debug\ContactsWindow.baml

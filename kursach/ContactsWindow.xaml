@@ -1,0 +1,29 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:kursach"
+        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="kursach.ContactsWindow"
+        mc:Ignorable="d"
+        Title="ContactsWindow" Height="450" Width="800">
+    <Grid>
+        <Button Content="Home" Margin="709,391,9.6,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <ListBox HorizontalAlignment="Left" Height="281" Margin="10,10,0,0" VerticalAlignment="Top" Width="325">
+            <System:String>ГОСТИНИЧНЫЙ КОМПЛЕКС</System:String>
+            <System:String>220026, г. Минск, пр-т Партизанский, 81</System:String>
+            <System:String>ОТДЕЛ БРОНИРОВАНИЯ</System:String>
+            <System:String>Телефон:</System:String>
+            <System:String>+375 17 388 91 00</System:String>
+            <System:String>А1 +375 29 195 40 31</System:String>
+            <System:String>МТС +375 33 619 54 00</System:String>
+            <System:String>E-mail:</System:String>
+            <System:String>office@hotel.by</System:String>
+            <System:String>РЕСЕПШН (КРУГЛОСУТОЧНО)</System:String>
+            <System:String>Телефон:</System:String>
+            <System:String>+375 17 388 91 47</System:String>
+            <System:String>A1 +375 29 104 08 92</System:String>
+        </ListBox>
+
+    </Grid>
+</Window>

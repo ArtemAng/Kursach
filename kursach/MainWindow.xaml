@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="О нас" HorizontalAlignment="Left" Margin="75,262,0,0" VerticalAlignment="Top" Width="67" Height="46"/>
-        <Button Content="Цены" HorizontalAlignment="Left" Margin="148,262,0,0" VerticalAlignment="Top" Width="67" Height="46"/>
-        <Button Content="Услуги" HorizontalAlignment="Left" Margin="220,262,0,0" VerticalAlignment="Top" Width="67" Height="46"/>
-        <Button Content="Контакты" HorizontalAlignment="Left" Margin="292,262,0,0" VerticalAlignment="Top" Width="67" Height="46" Click="Button_Click_2"/>
+        <Button Content="О нас" HorizontalAlignment="Left" Margin="75,262,0,0" VerticalAlignment="Top" Width="67" Height="46" Click="Button_Click_4"/>
+        <Button Content="Цены" HorizontalAlignment="Left" Margin="148,262,0,0" VerticalAlignment="Top" Width="67" Height="46" Click="Button_Click_5"/>
+        <Button Content="Услуги" HorizontalAlignment="Left" Margin="220,262,0,0" VerticalAlignment="Top" Width="67" Height="46" Click="Button_Click_6"/>
+        <Button Content="Контакты" HorizontalAlignment="Left" Margin="292,262,0,0" VerticalAlignment="Top" Width="67" Height="46" Click="Button_Click_1"/>
         <Label Content="Самый лучший гостиничный центр&#xD;&#xA;" HorizontalAlignment="Left" Margin="292,133,0,0" VerticalAlignment="Top" Height="36" Width="291"/>
         <Label Content="Добро пожаловать&#xA;" HorizontalAlignment="Left" Margin="335,60,0,0" VerticalAlignment="Top" Height="36" Width="121"/>
         <Button Content="Регистрация" HorizontalAlignment="Left" Margin="624,10,0,0" VerticalAlignment="Top" Width="160" Height="23" Click="Button_Click_3"/>

@@ -46,5 +46,12 @@ namespace kursach
                         $" Dop udobstva: {n.DopUdobstvaName}; Dop udobstva price: {n.Цена_доп_удобства}; ");
             }
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            MainWindow m = new MainWindow();
+            m.Show();
+            this.Close();
+        }
     }
 }

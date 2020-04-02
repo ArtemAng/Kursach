@@ -32,7 +32,9 @@ namespace kursach
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
+            ContactsWindow cw = new ContactsWindow();
+            cw.Show();
+            this.Close();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
@@ -48,5 +50,27 @@ namespace kursach
             w1.Show();
             this.Close();
         }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            About about = new About();
+            this.Close();
+            about.Show();
+        }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            PriceWindow pw = new PriceWindow();
+            pw.Show();
+            this.Close();
+        }
+
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+            UslugyWindow uw = new UslugyWindow();
+            uw.Show();
+            this.Close();
+        }
+
     }
 }

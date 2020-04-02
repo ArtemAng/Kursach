@@ -1,0 +1,24 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:kursach"
+        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="kursach.PriceWindow"
+        mc:Ignorable="d"
+        Title="PriceWindow" Height="450" Width="800">
+
+    <Grid>
+        <Button Content="Home" HorizontalAlignment="Left" Margin="709,391,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <ListBox HorizontalAlignment="Left" Height="204" Margin="66,54,0,0" VerticalAlignment="Top" Width="227">
+            <System:String>Цены:</System:String>
+            <System:String>Стандартный номер 200р ночь</System:String>
+            <System:String>Люкс - 300р ночь</System:String>
+            <System:String>Премиум - 400р</System:String>
+            <System:String>Сауна - 40р час</System:String>
+            <System:String>Завтрак - 10р</System:String>
+            <System:String>Обед - 12р</System:String>
+            <System:String>Ужин - 13 р</System:String>
+        </ListBox>
+    </Grid>
+</Window>

@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Table">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Login" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Login" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Клиент" Relationship="Self.FK_Клиент_User" FromRole="User" ToRole="Клиент" />
+  </EntityType>
+  <EntityType Name="Бронь">
+    <Key>
+      <PropertyRef Name="Код_бронь" />
+    </Key>
+    <Property Name="Код_бронь" Type="Int32" Nullable="false" />
+    <Property Name="Код_состояния" Type="Int32" Nullable="false" />
+    <Property Name="Код_номера" Type="Int32" Nullable="false" />
+    <Property Name="Фамилия" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Номера" Relationship="Self.FK_Бронь_Номера" FromRole="Бронь" ToRole="Номера" />
+    <NavigationProperty Name="Состояние_номера" Relationship="Self.FK_Бронь_Состояние_номера" FromRole="Бронь" ToRole="Состояние_номера" />
+  </EntityType>
+  <EntityType Name="Должность">
+    <Key>
+      <PropertyRef Name="Код_должность" />
+    </Key>
+    <Property Name="Код_должность" Type="Int32" Nullable="false" />
+    <Property Name="Должность1" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Сотрудники" Relationship="Self.FK_Сотрудники_Должность" FromRole="Должность" ToRole="Сотрудники" />
+  </EntityType>
+  <EntityType Name="Доп__Удобства">
+    <Key>
+      <PropertyRef Name="Код_доп__удобства" />
+    </Key>
+    <Property Name="Код_доп__удобства" Type="Int32" Nullable="false" />
+    <Property Name="Наименование" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="Цена_доп_удобства" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="Номера" Relationship="Self.FK_Номера_Доп__Удобства" FromRole="Доп__Удобства" ToRole="Номера" />
+  </EntityType>
+  <EntityType Name="Клиент">
+    <Key>
+      <PropertyRef Name="Код_клиента" />
+    </Key>
+    <Property Name="Код_клиента" Type="Int32" Nullable="false" />
+    <Property Name="Код_состояния_номера" Type="Int32" Nullable="false" />
+    <Property Name="Фамилия" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="Имя" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="Отчество" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="Дата_рождения" Type="DateTime" Precision="0" />
+    <Property Name="Пол" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="Паспортные_данные" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="Телефон" Type="Int32" />
+    <Property Name="idUser" Type="Int32" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Клиент_User" FromRole="Клиент" ToRole="User" />
+    <NavigationProperty Name="Состояние_номера" Relationship="Self.FK_Клиент_Состояние_номера" FromRole="Клиент" ToRole="Состояние_номера" />
+  </EntityType>
+  <EntityType Name="Номера">
+    <Key>
+      <PropertyRef Name="Код_номера" />
+    </Key>
+    <Property Name="Код_номера" Type="Int32" Nullable="false" />
+    <Property Name="Код_тип_номера" Type="Int32" Nullable="false" />
+    <Property Name="Код_доп__удобства" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Бронь" Relationship="Self.FK_Бронь_Номера" FromRole="Номера" ToRole="Бронь" />
+    <NavigationProperty Name="Доп__Удобства" Relationship="Self.FK_Номера_Доп__Удобства" FromRole="Номера" ToRole="Доп__Удобства" />
+    <NavigationProperty Name="Тип_номера" Relationship="Self.FK_Номера_Тип_номера" FromRole="Номера" ToRole="Тип_номера" />
+    <NavigationProperty Name="Состояние_номера" Relationship="Self.FK_Состояние_номера_Номера" FromRole="Номера" ToRole="Состояние_номера" />
+  </EntityType>
+  <EntityType Name="Состояние_номера">
+    <Key>
+      <PropertyRef Name="Код_состояние_номера" />
+    </Key>
+    <Property Name="Код_состояние_номера" Type="Int32" Nullable="false" />
+    <Property Name="Код_номера" Type="Int32" Nullable="false" />
+    <Property Name="Код_сотрудника" Type="Int32" Nullable="false" />
+    <Property Name="Код_брони" Type="Int32" Nullable="false" />
+    <Property Name="Дата_заезд" Type="DateTime" Precision="0" />
+    <Property Name="Дата_выезд" Type="DateTime" Precision="0" />
+    <Property Name="Сумма" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="isFree" Type="Boolean" />
+    <NavigationProperty Name="Бронь" Relationship="Self.FK_Бронь_Состояние_номера" FromRole="Состояние_номера" ToRole="Бронь" />
+    <NavigationProperty Name="Клиент" Relationship="Self.FK_Клиент_Состояние_номера" FromRole="Состояние_номера" ToRole="Клиент" />
+    <NavigationProperty Name="Номера" Relationship="Self.FK_Состояние_номера_Номера" FromRole="Состояние_номера" ToRole="Номера" />
+    <NavigationProperty Name="Сотрудники" Relationship="Self.FK_Состояние_номера_Сотрудники" FromRole="Состояние_номера" ToRole="Сотрудники" />
+  </EntityType>
+  <EntityType Name="Сотрудники">
+    <Key>
+      <PropertyRef Name="Код_сотрудника" />
+    </Key>
+    <Property Name="Код_сотрудника" Type="Int32" Nullable="false" />
+    <Property Name="Код_должности" Type="Int32" Nullable="false" />
+    <Property Name="Фамилия" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="Имя" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="Отчество" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="Образование" Type="Boolean" />
+    <Property Name="Заработная_плата" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="Должность" Relationship="Self.FK_Сотрудники_Должность" FromRole="Сотрудники" ToRole="Должность" />
+    <NavigationProperty Name="Состояние_номера" Relationship="Self.FK_Состояние_номера_Сотрудники" FromRole="Сотрудники" ToRole="Состояние_номера" />
+  </EntityType>
+  <EntityType Name="Тип_номера">
+    <Key>
+      <PropertyRef Name="Код_тип_номера" />
+    </Key>
+    <Property Name="Код_тип_номера" Type="Int32" Nullable="false" />
+    <Property Name="Наименование" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="Количество_комнат" Type="Int32" />
+    <Property Name="Стоимость" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="Номера" Relationship="Self.FK_Номера_Тип_номера" FromRole="Тип_номера" ToRole="Номера" />
+  </EntityType>
+  <Association Name="FK_Клиент_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Клиент" Type="Self.Клиент" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Клиент">
+        <PropertyRef Name="idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Бронь_Номера">
+    <End Role="Номера" Type="Self.Номера" Multiplicity="1" />
+    <End Role="Бронь" Type="Self.Бронь" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Номера">
+        <PropertyRef Name="Код_номера" />
+      </Principal>
+      <Dependent Role="Бронь">
+        <PropertyRef Name="Код_номера" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Бронь_Состояние_номера">
+    <End Role="Состояние_номера" Type="Self.Состояние_номера" Multiplicity="1" />
+    <End Role="Бронь" Type="Self.Бронь" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Состояние_номера">
+        <PropertyRef Name="Код_состояние_номера" />
+      </Principal>
+      <Dependent Role="Бронь">
+        <PropertyRef Name="Код_состояния" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Сотрудники_Должность">
+    <End Role="Должность" Type="Self.Должность" Multiplicity="1" />
+    <End Role="Сотрудники" Type="Self.Сотрудники" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Должность">
+        <PropertyRef Name="Код_должность" />
+      </Principal>
+      <Dependent Role="Сотрудники">
+        <PropertyRef Name="Код_должности" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Номера_Доп__Удобства">
+    <End Role="Доп__Удобства" Type="Self.Доп__Удобства" Multiplicity="1" />
+    <End Role="Номера" Type="Self.Номера" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Доп__Удобства">
+        <PropertyRef Name="Код_доп__удобства" />
+      </Principal>
+      <Dependent Role="Номера">
+        <PropertyRef Name="Код_доп__удобства" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Клиент_Состояние_номера">
+    <End Role="Состояние_номера" Type="Self.Состояние_номера" Multiplicity="1" />
+    <End Role="Клиент" Type="Self.Клиент" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Состояние_номера">
+        <PropertyRef Name="Код_состояние_номера" />
+      </Principal>
+      <Dependent Role="Клиент">
+        <PropertyRef Name="Код_состояния_номера" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Номера_Тип_номера">
+    <End Role="Тип_номера" Type="Self.Тип_номера" Multiplicity="1" />
+    <End Role="Номера" Type="Self.Номера" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Тип_номера">
+        <PropertyRef Name="Код_тип_номера" />
+      </Principal>
+      <Dependent Role="Номера">
+        <PropertyRef Name="Код_тип_номера" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Состояние_номера_Номера">
+    <End Role="Номера" Type="Self.Номера" Multiplicity="1" />
+    <End Role="Состояние_номера" Type="Self.Состояние_номера" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Номера">
+        <PropertyRef Name="Код_номера" />
+      </Principal>
+      <Dependent Role="Состояние_номера">
+        <PropertyRef Name="Код_номера" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Состояние_номера_Сотрудники">
+    <End Role="Сотрудники" Type="Self.Сотрудники" Multiplicity="1" />
+    <End Role="Состояние_номера" Type="Self.Состояние_номера" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Сотрудники">
+        <PropertyRef Name="Код_сотрудника" />
+      </Principal>
+      <Dependent Role="Состояние_номера">
+        <PropertyRef Name="Код_сотрудника" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Гостиночный_комплекмEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Table" EntityType="Self.Table" />
+    <EntitySet Name="User" EntityType="Self.User" />
+    <EntitySet Name="Бронь" EntityType="Self.Бронь" />
+    <EntitySet Name="Должность" EntityType="Self.Должность" />
+    <EntitySet Name="Доп__Удобства" EntityType="Self.Доп__Удобства" />
+    <EntitySet Name="Клиент" EntityType="Self.Клиент" />
+    <EntitySet Name="Номера" EntityType="Self.Номера" />
+    <EntitySet Name="Состояние_номера" EntityType="Self.Состояние_номера" />
+    <EntitySet Name="Сотрудники" EntityType="Self.Сотрудники" />
+    <EntitySet Name="Тип_номера" EntityType="Self.Тип_номера" />
+    <AssociationSet Name="FK_Клиент_User" Association="Self.FK_Клиент_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Клиент" EntitySet="Клиент" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Бронь_Номера" Association="Self.FK_Бронь_Номера">
+      <End Role="Номера" EntitySet="Номера" />
+      <End Role="Бронь" EntitySet="Бронь" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Бронь_Состояние_номера" Association="Self.FK_Бронь_Состояние_номера">
+      <End Role="Состояние_номера" EntitySet="Состояние_номера" />
+      <End Role="Бронь" EntitySet="Бронь" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Сотрудники_Должность" Association="Self.FK_Сотрудники_Должность">
+      <End Role="Должность" EntitySet="Должность" />
+      <End Role="Сотрудники" EntitySet="Сотрудники" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Номера_Доп__Удобства" Association="Self.FK_Номера_Доп__Удобства">
+      <End Role="Доп__Удобства" EntitySet="Доп__Удобства" />
+      <End Role="Номера" EntitySet="Номера" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Клиент_Состояние_номера" Association="Self.FK_Клиент_Состояние_номера">
+      <End Role="Состояние_номера" EntitySet="Состояние_номера" />
+      <End Role="Клиент" EntitySet="Клиент" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Номера_Тип_номера" Association="Self.FK_Номера_Тип_номера">
+      <End Role="Тип_номера" EntitySet="Тип_номера" />
+      <End Role="Номера" EntitySet="Номера" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Состояние_номера_Номера" Association="Self.FK_Состояние_номера_Номера">
+      <End Role="Номера" EntitySet="Номера" />
+      <End Role="Состояние_номера" EntitySet="Состояние_номера" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Состояние_номера_Сотрудники" Association="Self.FK_Состояние_номера_Сотрудники">
+      <End Role="Сотрудники" EntitySet="Сотрудники" />
+      <End Role="Состояние_номера" EntitySet="Состояние_номера" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+</Schema>

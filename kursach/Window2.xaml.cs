@@ -64,7 +64,8 @@ namespace kursach
                     Код_состояния = Client.idNumber
                 });
                 db.SaveChanges();
+                MessageBox.Show("Boocking is done");
             }
-    }
+        }
 }
 }

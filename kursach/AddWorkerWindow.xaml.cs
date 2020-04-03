@@ -40,6 +40,7 @@ namespace kursach
                 db.Сотрудники.Add(new Сотрудники() { Код_сотрудника = db.Сотрудники.Max(a => a.Код_сотрудника) + 1, Имя = worker.fName, Фамилия = worker.sName, Отчество = worker.oName, Код_должности = worker.idDolzhnost, Образование = worker.obrazovanie });
                 db.SaveChanges();
             }
+            MessageBox.Show("Worker added");
         }
     }
 }

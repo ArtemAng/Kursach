@@ -103,6 +103,7 @@ namespace kursach
 
                     select new
                     {
+                        Clients.Код_клиента,
                         Clients.Имя,
                         Clients.Фамилия,
                         Clients.Отчество,
@@ -115,7 +116,7 @@ namespace kursach
                         SecondNameInBronj = Broni.Фамилия
                     };
                 foreach (var n in Numbers1)
-                    DBItems.Items.Add($"Client name: {n.Имя + " " + n.Фамилия + " " + n.Отчество}; " +
+                    DBItems.Items.Add($"Client id: {n.Код_клиента}; Client name: {n.Имя + " " + n.Фамилия + " " + n.Отчество};  " +
                         $"birthday: {n.Дата_рождения}; gender: {n.Пол} phone number: {n.Телефон};" +
                         $" date in: {n.Дата_заезд}; date out: {n.Дата_выезд} price: {n.Сумма}; second name in bronj: {n.SecondNameInBronj}");
             }
@@ -192,6 +193,7 @@ namespace kursach
 
                                  select new
                                  {
+                                     Clients.Код_клиента,
                                      Clients.Имя,
                                      Clients.Фамилия,
                                      Clients.Отчество,
@@ -204,7 +206,7 @@ namespace kursach
                                      SecondNameInBronj = Broni.Фамилия
                                  };
                             foreach (var n in Numbers1.OrderBy(a=>a.Имя))
-                                DBItems.Items.Add($"Client name: {n.Имя + " " + n.Фамилия + " " + n.Отчество}; " +
+                                DBItems.Items.Add($"Client name: {n.Имя + " " + n.Фамилия + " " + n.Отчество}; client id: {n.Код_клиента}" +
                                     $"birthday: {n.Дата_рождения}; gender: {n.Пол} phone number: {n.Телефон};" +
                                     $" date in: {n.Дата_заезд}; date out: {n.Дата_выезд} price: {n.Сумма}; second name in bronj: {n.SecondNameInBronj}");
                         }
@@ -231,6 +233,7 @@ namespace kursach
 
                                  select new
                                  {
+                                     Clients.Код_клиента,
                                      Clients.Имя,
                                      Clients.Фамилия,
                                      Clients.Отчество,
@@ -243,7 +246,7 @@ namespace kursach
                                      SecondNameInBronj = Broni.Фамилия
                                  };
                             foreach (var n in Numbers1.OrderBy(a => a.Дата_рождения))
-                                DBItems.Items.Add($"Client name: {n.Имя + " " + n.Фамилия + " " + n.Отчество}; " +
+                                DBItems.Items.Add($"Client name: {n.Имя + " " + n.Фамилия + " " + n.Отчество}; client id: {n.Код_клиента} " +
                                     $"birthday: {n.Дата_рождения}; gender: {n.Пол} phone number: {n.Телефон};" +
                                     $" date in: {n.Дата_заезд}; date out: {n.Дата_выезд} price: {n.Сумма}; second name in bronj: {n.SecondNameInBronj}");
                         }
@@ -278,6 +281,23 @@ namespace kursach
                    };
                 foreach (var n in Numbers1)
                     DBItems.Items.Add($" Worker name: {n.WorkerName}; is have obrozovanie: {n.Образование}; Doljnost: {n.Должность1}");
+            }
+        }
+
+        private void Button_Click_9(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_10(object sender, RoutedEventArgs e)
+        {
+            int clientId = Convert.ToInt32(ClientId.Text);
+            using (Гостиночный_комплекмEntities db = new Гостиночный_комплекмEntities())
+            {
+                var order = db.Клиент.Where(o => o.Код_клиента == clientId).FirstOrDefault();
+                db.Клиент.Remove(order);
+                db.SaveChanges();
+                MessageBox.Show($"Client {order.Имя} removed");
             }
         }
     }

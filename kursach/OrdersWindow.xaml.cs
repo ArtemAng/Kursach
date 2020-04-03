@@ -35,6 +35,7 @@ namespace kursach
                     join Doljnost in db.Должность on Workers.Код_должности equals Doljnost.Код_должность
                     select new
                     {
+                        Clients.Код_клиента,
                         Clients.Имя,
                         Clients.Фамилия,
                         Clients.Отчество,
@@ -56,7 +57,7 @@ namespace kursach
 
                     };
                 foreach (var n in Numbers1)
-                    DBItems.Items.Add($"Client name: {n.Имя + " " + n.Фамилия + " " + n.Отчество}; " +
+                    DBItems.Items.Add($"Client id: {n.Код_клиента}; Client name: {n.Имя + " " + n.Фамилия + " " + n.Отчество}; " +
                         $"birthday: {n.Дата_рождения}; gender: {n.Пол} phone number: {n.Телефон};" +
                         $" date in: {n.Дата_заезд}; date out: {n.Дата_выезд} price: {n.Сумма}; second name in bronj: {n.SecondNameInBronj}" +
                         $" Number type: {n.Наименование}; Number type price: {n.Стоимость}; quantity rooms: {n.Количество_комнат};" +
@@ -121,7 +122,7 @@ namespace kursach
                         $" date in: {n.Дата_заезд}; date out: {n.Дата_выезд} price: {n.Сумма}; second name in bronj: {n.SecondNameInBronj}");
             }
         }
-        private static string sortSwitcher="clients";
+        private static string sortSwitcher = "clients";
         private void Button_Click_2(object sender, RoutedEventArgs e)// about workers
         {
             DBItems.Items.Clear();
@@ -134,12 +135,13 @@ namespace kursach
                    select new
                    {
                        WorkerName = Workers.Имя + " " + Workers.Фамилия + " " + Workers.Отчество,
+                       Workers.Код_сотрудника,
                        Workers.Образование,
                        Doljnost.Должность1
 
                    };
                 foreach (var n in Numbers1)
-                    DBItems.Items.Add($" Worker name: {n.WorkerName}; is have obrozovanie: {n.Образование}; Doljnost: {n.Должность1}");
+                    DBItems.Items.Add($"Worker id: {n.Код_сотрудника}; Worker name: {n.WorkerName}; is have obrozovanie: {n.Образование}; Doljnost: {n.Должность1}");
             }
         }
 
@@ -172,12 +174,13 @@ namespace kursach
                                {
                                    WorkerName = Workers.Имя + " " + Workers.Фамилия + " " + Workers.Отчество,
                                    Workers.Образование,
+                                   Workers.Код_сотрудника,
                                    Doljnost.Должность1
 
                                };
 
                             foreach (var n in Numbers1.OrderBy(a => a.WorkerName))
-                                DBItems.Items.Add($" Worker name: {n.WorkerName}; is have obrozovanie: {n.Образование}; Doljnost: {n.Должность1}");
+                                DBItems.Items.Add($"Worker id: {n.Код_сотрудника}; Worker name: {n.WorkerName}; is have obrozovanie: {n.Образование}; Doljnost: {n.Должность1}");
                         }
                     }
                     break;
@@ -205,7 +208,7 @@ namespace kursach
                                      StatusNumber.Сумма,
                                      SecondNameInBronj = Broni.Фамилия
                                  };
-                            foreach (var n in Numbers1.OrderBy(a=>a.Имя))
+                            foreach (var n in Numbers1.OrderBy(a => a.Имя))
                                 DBItems.Items.Add($"Client name: {n.Имя + " " + n.Фамилия + " " + n.Отчество}; client id: {n.Код_клиента}" +
                                     $"birthday: {n.Дата_рождения}; gender: {n.Пол} phone number: {n.Телефон};" +
                                     $" date in: {n.Дата_заезд}; date out: {n.Дата_выезд} price: {n.Сумма}; second name in bronj: {n.SecondNameInBronj}");
@@ -298,6 +301,18 @@ namespace kursach
                 db.Клиент.Remove(order);
                 db.SaveChanges();
                 MessageBox.Show($"Client {order.Имя} removed");
+            }
+        }
+
+        private void Button_Click_11(object sender, RoutedEventArgs e)
+        {
+            int wId = Convert.ToInt32(WorkerId.Text);
+            using (Гостиночный_комплекмEntities db = new Гостиночный_комплекмEntities())
+            {
+                var order = db.Сотрудники.Where(o => o.Код_сотрудника == wId).FirstOrDefault();
+                db.Сотрудники.Remove(order);
+                db.SaveChanges();
+                MessageBox.Show($"Worker {order.Имя} removed");
             }
         }
     }

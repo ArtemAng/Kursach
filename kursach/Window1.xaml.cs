@@ -32,10 +32,20 @@ namespace kursach
             using (Гостиночный_комплекмEntities db = new Гостиночный_комплекмEntities())
             {
                 int id = (from Users in db.User
-                          select new { Users.Id }).Max(a => a.Id) + 1 ;
+                          select new { Users.Id }).Max(a => a.Id) + 1;
                 var user = new User() { Id = id, Login = login, Password = passWord };
-                db.User.Add(user);
-                db.SaveChanges();
+                var users = from Users in db.User
+                            where Users.Login == login
+                            select new { Users.Id };
+                if (users.Count() > 0)
+                {
+                    MessageBox.Show("This user is registered");
+                }
+                else
+                {
+                    db.User.Add(user);
+                    db.SaveChanges();
+                }
             }
         }
     }

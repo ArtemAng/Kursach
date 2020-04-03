@@ -1,0 +1,36 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:kursach"
+        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="kursach.Window2"
+        mc:Ignorable="d"
+        Title="Window2" Height="450" Width="800">
+    <Grid>
+        <Button Content="Book" HorizontalAlignment="Left" Margin="284,315,0,0" VerticalAlignment="Top" Width="229" Click="Button_Click"/>
+        <TextBox x:Name="fName" HorizontalAlignment="Left" Height="33" Margin="132,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="239"/>
+        <TextBox x:Name="sName" HorizontalAlignment="Left" Height="33" Margin="132,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="239"/>
+        <TextBox x:Name="oName" HorizontalAlignment="Left" Height="33" Margin="132,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="239"/>
+        <TextBox x:Name="idNumber" HorizontalAlignment="Left" Height="33" Margin="465,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48"/>
+        <DatePicker x:Name="BirthDate" HorizontalAlignment="Left" Margin="237,252,0,0" VerticalAlignment="Top" Height="26" Width="134"/>
+        <Label  Content="Gender:" HorizontalAlignment="Left" Margin="82,251,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="GenderPicker11" HorizontalAlignment="Left" Margin="133,252,0,0" VerticalAlignment="Top" Width="99" Height="26">
+            <System:String>Male</System:String>
+            <System:String>Female"</System:String>
+            <System:String>Anongender"</System:String>
+            <System:String>Cavusgender"</System:String>
+            <System:String>Zodiacgender"</System:String>
+            <System:String>Affectugender"</System:String>
+        </ComboBox>
+        <TextBox x:Name="Phone" HorizontalAlignment="Left" Height="33" Margin="132,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="239"/>
+        <TextBox x:Name="Passport" HorizontalAlignment="Left" Height="33" Margin="132,208,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="239"/>
+        <Label  Content="Name:" HorizontalAlignment="Left" Margin="76,63,0,0" VerticalAlignment="Top"/>
+        <Label  Content="Surname:" HorizontalAlignment="Left" Margin="76,101,0,0" VerticalAlignment="Top"/>
+        <Label  Content="Otchestvo:" HorizontalAlignment="Left" Margin="76,139,0,0" VerticalAlignment="Top"/>
+        <Label  Content="Phone:" HorizontalAlignment="Left" Margin="76,177,0,0" VerticalAlignment="Top"/>
+        <Label  Content="Passport:" HorizontalAlignment="Left" Margin="76,208,0,0" VerticalAlignment="Top"/>
+        <Label  Content="Id number:" HorizontalAlignment="Left" Margin="393,56,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

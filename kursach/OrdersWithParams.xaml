@@ -110,12 +110,6 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Запрос 8">
-                <Grid Background="#FFE5E5E5"/>
-            </TabItem>
-            <TabItem Header="Запрос 9">
-                <Grid Background="#FFE5E5E5"/>
-            </TabItem>
-            <TabItem Header="Запрос 10">
                 <Grid Background="#FFE5E5E5">
                     <Label Content="Number id:" HorizontalAlignment="Left" Margin="10,215,0,0" VerticalAlignment="Top" Width="78"/>
                     <TextBox x:Name="NumberId10" HorizontalAlignment="Left" Height="23" Margin="88,219,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
@@ -123,7 +117,7 @@
                     <ListBox x:Name="DBItems10" HorizontalAlignment="Left" Height="200" Margin="10,10,0,0" VerticalAlignment="Top" Width="749"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Запрос 11">
+            <TabItem Header="Запрос 9">
                 <Grid Background="#FFE5E5E5">
                     <ListBox x:Name="DBItems11" HorizontalAlignment="Left" Height="200" Margin="10,10,0,0" VerticalAlignment="Top" Width="749"/>
                     <Label Content="Reservation date:" HorizontalAlignment="Left" Margin="10,215,0,0" VerticalAlignment="Top"/>
@@ -133,13 +127,13 @@
                     <Button Content="Run" HorizontalAlignment="Left" Margin="164,270,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_7"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Запрос 12">
+            <TabItem Header="Запрос 10">
                 <Grid Background="#FFE5E5E5">
                     <ListBox x:Name="DBItems12" HorizontalAlignment="Left" Height="200" Margin="10,10,0,0" VerticalAlignment="Top" Width="749"/>
                     <Button Content="Run" HorizontalAlignment="Left" Margin="10,229,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_8"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Запрос 13">
+            <TabItem Header="Запрос 11">
                 <Grid Background="#FFE5E5E5">
                     <ListBox x:Name="DBItems13" HorizontalAlignment="Left" Height="200" Margin="10,10,0,0" VerticalAlignment="Top" Width="749"/>
                     <Label Content="First date:" HorizontalAlignment="Left" Margin="10,215,0,0" VerticalAlignment="Top"/>
@@ -149,7 +143,7 @@
                     <Button Content="Run" HorizontalAlignment="Left" Margin="117,272,0,0" VerticalAlignment="Top" Click="Button_Click_6" Width="75"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Запрос 14">
+            <TabItem Header="Запрос 12">
                 <Grid Background="#FFE5E5E5">
                     <ListBox x:Name="DBItems14" HorizontalAlignment="Left" Height="200" Margin="10,10,0,0" VerticalAlignment="Top" Width="749"/>
                     <TextBox x:Name="ClientName14" HorizontalAlignment="Left" Height="22" Margin="84,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="195"/>
@@ -157,16 +151,13 @@
                     <Button Content="Run" HorizontalAlignment="Left" Margin="204,242,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_9"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Запрос 15">
+            <TabItem Header="Запрос 13">
                 <Grid Background="#FFE5E5E5">
                     <ListBox x:Name="DBItems15" HorizontalAlignment="Left" Height="200" Margin="10,10,0,0" VerticalAlignment="Top" Width="749"/>
                     <TextBox x:Name="NumberId15" HorizontalAlignment="Left" Height="22" Margin="84,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="195"/>
                     <Label Content="Number id:" HorizontalAlignment="Left" Margin="10,211,0,0" VerticalAlignment="Top"/>
                     <Button Content="Run" HorizontalAlignment="Left" Margin="204,242,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_10" />
                 </Grid>
-            </TabItem>
-            <TabItem Header="Запрос 16">
-                <Grid Background="#FFE5E5E5"/>
             </TabItem>
 
         </TabControl>

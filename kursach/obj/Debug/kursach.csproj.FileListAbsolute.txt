@@ -36,3 +36,7 @@ C:\Users\Mi\source\repos\kursach\kursach\obj\Debug\PriceWindow.baml
 C:\Users\Mi\source\repos\kursach\kursach\obj\Debug\UslugyWindow.baml
 C:\Users\Mi\source\repos\kursach\kursach\obj\Debug\ContactsWindow.g.cs
 C:\Users\Mi\source\repos\kursach\kursach\obj\Debug\ContactsWindow.baml
+C:\Users\Mi\source\repos\kursach\kursach\obj\Debug\AddWorkerWindow.g.cs
+C:\Users\Mi\source\repos\kursach\kursach\obj\Debug\AddWorkerWindow.baml
+C:\Users\Mi\source\repos\kursach\kursach\obj\Debug\Window2.g.cs
+C:\Users\Mi\source\repos\kursach\kursach\obj\Debug\Window2.baml

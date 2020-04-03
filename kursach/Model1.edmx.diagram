@@ -8,7 +8,7 @@
         <EntityTypeShape EntityType="Model.sysdiagrams" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Table" Width="1.5" PointX="2.75" PointY="8.625" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.User" Width="1.5" PointX="8.25" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Бронь" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Бронь" Width="1.5" PointX="5.875" PointY="7.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Должность" Width="1.5" PointX="3.75" PointY="2.5" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Доп__Удобства" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Клиент" Width="1.5" PointX="10.5" PointY="4.5" IsExpanded="true" />

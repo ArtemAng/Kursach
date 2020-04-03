@@ -53,5 +53,11 @@ namespace kursach
             m.Show();
             this.Close();
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Window2 w2 = new Window2();
+            w2.Show();
+        }
     }
 }
